@@ -1,0 +1,187 @@
+:root {
+    --main-col: #ffeba7;
+    --bg-col: #2a2b38;
+    --bg-field: #1f2029;
+}
+
+body.painel {
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(-45deg, #696969, #4F4F4F, #363636, #1C1C1C);
+    background-size: 400% 400%;
+    animation: gradient 18s ease infinite;
+    color: #f5f5f5;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.topo {
+    background-color: #D3D3D3;
+    color: #000;
+    padding: 12px;
+}
+
+/* ---------- Layout (sidebar + conteúdo) ---------- */
+
+.layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px 40px;
+}
+
+.sidebar {
+    flex: 0 0 220px;
+    background: var(--bg-col);
+    border: 1px solid var(--main-col);
+    border-radius: 10px;
+    padding: 0 0 12px;
+    position: sticky;
+    top: 20px;
+    overflow: hidden;
+}
+
+.sidebar-usuario {
+    color: var(--main-col);
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem .75rem;
+    border-bottom: 1px solid #555;
+    word-break: break-word;
+}
+
+.sidebar .nav-link {
+    color: #f5f5f5;
+    padding: .7rem 1.2rem;
+    border-left: 3px solid transparent;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar .nav-link:hover {
+    color: var(--main-col);
+    background: var(--bg-field);
+}
+
+.sidebar .nav-link.active {
+    color: var(--main-col);
+    border-left-color: var(--main-col);
+    background: var(--bg-field);
+    font-weight: 600;
+}
+
+.conteudo-principal {
+    flex: 1;
+    min-width: 0;
+}
+
+.conteudo-principal h1 {
+    color: var(--main-col);
+    margin-bottom: .3rem;
+}
+
+.conteudo-principal h3 {
+    color: var(--main-col);
+}
+
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        flex: 0 0 auto;
+        width: 100%;
+        position: static;
+    }
+}
+
+/* ---------- Cartões de listagem (empresas / trabalhadores) ---------- */
+
+.card-listagem {
+    background: var(--bg-col);
+    border: 1px solid var(--main-col);
+    border-radius: 10px;
+    padding: 1.2rem;
+    text-align: center;
+    height: 100%;
+}
+
+.card-listagem .nome-conta {
+    color: var(--main-col);
+    font-weight: 600;
+    margin: .6rem 0 1rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+/* ---------- Botão padrão do projeto ---------- */
+
+.btn-dourado {
+    background-color: var(--main-col);
+    color: var(--bg-col);
+    border: none;
+    font-weight: bold;
+    font-size: .8em;
+    text-transform: uppercase;
+    padding: .6em 1.3em;
+    border-radius: 4px;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn-dourado:hover {
+    background: var(--bg-field);
+    color: var(--main-col);
+}
+
+/* ---------- Cartão de conteúdo (perfil, formulários) ---------- */
+
+.painel-card {
+    background: var(--bg-col);
+    border: 1px solid var(--main-col);
+    border-radius: 10px;
+    padding: 1.8rem;
+}
+
+.painel-card label {
+    color: var(--main-col);
+    font-weight: 500;
+    margin-top: .9rem;
+    display: block;
+}
+
+.painel-card .form-control,
+.painel-card .form-select {
+    background: var(--bg-field);
+    color: #f5f5f5;
+    border: 1px solid #555;
+}
+
+.painel-card .form-control::placeholder {
+    color: #aaa;
+}
+
+.painel-card .form-control:disabled {
+    background: #15161c;
+    color: #999;
+}
+
+.painel-card .form-control:focus,
+.painel-card .form-select:focus {
+    background: var(--bg-field);
+    color: #f5f5f5;
+    border-color: var(--main-col);
+    box-shadow: none;
+}
+
+.vazio {
+    color: #ccc;
+    font-style: italic;
+}

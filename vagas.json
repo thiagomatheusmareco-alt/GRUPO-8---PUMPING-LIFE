@@ -1,0 +1,12 @@
+[
+    {
+        "empresa_id": 2,
+        "empresa_nome": "Leoncio",
+        "titulo": "Contador Sênior",
+        "descricao": "Vai contar",
+        "requisitos": "Saber contar",
+        "expiracao": "2026-11-12",
+        "status": "ativa",
+        "data_criacao": "2026-11-11 01:47:11"
+    }
+]
